@@ -1,0 +1,37 @@
+% Define the predicates for diet recommendations based on diseases.
+
+% Example: Diet recommendation for diabetes.
+diet_recommendation(diabetes, [fruits, vegetables, whole grains, lean protein, limit sugar]).
+
+% Example: Diet recommendation for high blood pressure.
+diet_recommendation(high_blood_pressure, [low-sodium, potassium-rich foods, whole grains, lean protein]).
+
+% Example: Diet recommendation for heart disease.
+diet_recommendation(heart_disease, [low-saturated-fat, high-fiber, omega-3-rich foods, fruits, vegetables]).
+
+% Define predicates to check if a person has a specific disease.
+% You can implement these predicates based on specific disease criteria.
+
+% Example: Check if a person has diabetes.
+has_disease(Person, diabetes) :- /* Your criteria here */.
+
+% Example: Check if a person has high blood pressure.
+has_disease(Person, high_blood_pressure) :- /* Your criteria here */.
+
+% Example: Check if a person has heart disease.
+has_disease(Person, heart_disease) :- /* Your criteria here */.
+
+% Define a predicate to suggest a diet based on a person's disease.
+suggest_diet(Person, RecommendedDiet) :-
+    has_disease(Person, Disease),
+    diet_recommendation(Disease, RecommendedDiet).
+
+% Example queries:
+% 1. What diet should a person with diabetes follow?
+%    suggest_diet(john, RecommendedDiet).
+%
+% 2. What diet should a person with high blood pressure follow?
+%    suggest_diet(emma, RecommendedDiet).
+%
+% 3. What diet should a person with heart disease follow?
+%    suggest_diet(michael, RecommendedDiet).
